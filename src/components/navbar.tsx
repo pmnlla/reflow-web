@@ -18,7 +18,7 @@ const items = [
 
 export default function Navbar() {
   return (
-    <nav className="border-b-2 border-gray-200 dark:border-gray-800 border-dashed sticky top-0 z-50">
+    <nav className="border-b-2 border-gray-200 dark:border-gray-800 border-dashed sticky top-0 z-50 backdrop-blur-md bg-background/80">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
