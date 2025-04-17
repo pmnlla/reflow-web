@@ -32,11 +32,11 @@ const cards = [
 const faq = [
   {
     question: "What is the timeline?",
-    answer: "The event will run from May 1st to May 31st. You can design your PCB anytime during this period, and we will ship it to you on June 1st. You will have until June 15th to order the parts and reflow solder your PCB.",
+    answer: "Undecided",
   },
   {
     question: "What are the requirements to participate?",
-    answer: "You must be 18 or under to participate. You must be a student in",
+    answer: "You must be a high school student or under to participate.",
   },
   {
     question: "What is the cost?",
