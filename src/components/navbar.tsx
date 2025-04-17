@@ -3,7 +3,8 @@
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import Image from "next/image";
 import Link from "next/link";
-
+import { FaGithub } from "react-icons/fa";
+import ThemeToggle from "@/components/theme-toggle";
 const items = [
   {
     label: "Home",
@@ -16,9 +17,8 @@ const items = [
 ];
 
 export default function Navbar() {
-
   return (
-    <nav className="border-b-2 border-gray-200 border-dashed sticky top-0 z-50">
+    <nav className="border-b-2 border-gray-200 dark:border-gray-800 border-dashed sticky top-0 z-50">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
@@ -32,7 +32,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop menu */}
-          <div className="hidden sm:flex sm:space-x-8">
+          <div className="hidden sm:flex sm:items-center sm:space-x-8">
             {items.map((item) => (
               <Link
                 key={item.href}
@@ -42,9 +42,19 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
+            <Link href="https://github.com/pmnlla/reflow" className="flex items-center" target="_blank">
+              <FaGithub className="text-2xl" />
+            </Link>
+            <div className="flex items-center">
+              <ThemeToggle />
+            </div>
           </div>
 
-          <div className="sm:hidden">
+          {/* Mobile menu */}
+          <div className="flex items-center space-x-4 sm:hidden">
+            <div className="flex items-center">
+              <ThemeToggle />
+            </div>
             <Drawer>
               <DrawerTrigger asChild>
                 <button

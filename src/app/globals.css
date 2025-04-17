@@ -1,44 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:is(.dark *));
 
-@theme {
-  /* Define custom colors */
-  --color-darker: #121217;
-  --color-dark: #17171d;
-  --color-darkless: #252429;
-  --color-black: #1f2d3d;
-  --color-steel: #273444;
-  --color-slate: #3c4858;
-  --color-muted: #8492a6;
-  --color-smoke: #e0e6ed;
-  --color-snow: #f9fafc;
-  --color-white: #ffffff;
-  --color-red: #ec3750;
-  --color-orange: #ff8c37;
-  --color-yellow: #f1c40f;
-  --color-green: #33d6a6;
-  --color-cyan: #5bc0de;
-  --color-blue: #338eda;
-  --color-purple: #a633d6;
-  --color-twitter: #1da1f2;
-  --color-facebook: #3b5998;
-  --color-instagram: #e1306c;
-  
-  /* Define semantic colors for light mode */
-  --color-text: #1f2d3d;
-  --color-background: #ffffff;
-  --color-elevated: #ffffff;
-  --color-sheet: #f9fafc;
-  --color-sunken: #e0e6ed;
-  --color-border: #e0e6ed;
-  --color-placeholder: #8492a6;
-  --color-secondary: #3c4858;
-  --color-primary: #ec3750;
-  --color-accent: #338eda;
-  
-  /* Keep existing theme variables */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -56,11 +23,16 @@
   --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
+  --color-border: var(--border);
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -71,24 +43,86 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Dark mode theme variables */
-@theme dark {
-  --color-text: #ffffff;
-  --color-background: #17171d;
-  --color-elevated: #252429;
-  --color-sheet: #252429;
-  --color-sunken: #121217;
-  --color-border: #252429;
-  --color-placeholder: #3c4858;
-  --color-secondary: #8492a6;
-  --color-muted: #8492a6;
-  --color-accent: #5bc0de;
+:root {
+  --radius: 0.625rem;
+  --background: #ffffff;
+  --foreground: #1f2d3d;
+  --card: #ffffff;
+  --card-foreground: #1f2d3d;
+  --popover: #ffffff;
+  --popover-foreground: #1f2d3d;
+  --primary: #ec3750;
+  --primary-foreground: #ffffff;
+  --secondary: #3c4858;
+  --secondary-foreground: #ffffff;
+  --muted: #8492a6;
+  --muted-foreground: #1f2d3d;
+  --accent: #338eda;
+  --accent-foreground: #ffffff;
+  --destructive: #ec3750;
+  --border: #e0e6ed;
+  --input: #e0e6ed;
+  --ring: #338eda;
+  --chart-1: #ec3750;
+  --chart-2: #ff8c37;
+  --chart-3: #f1c40f;
+  --chart-4: #33d6a6;
+  --chart-5: #338eda;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1f2d3d;
+  --sidebar-primary: #ec3750;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #338eda;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e0e6ed;
+  --sidebar-ring: #338eda;
 }
 
-body {
-  font-family: 'Phantom Sans', Arial, Helvetica, sans-serif;
+.dark {
+  --background: #17171d;
+  --foreground: #ffffff;
+  --card: #252429;
+  --card-foreground: #ffffff;
+  --popover: #252429;
+  --popover-foreground: #ffffff;
+  --primary: #ec3750;
+  --primary-foreground: #ffffff;
+  --secondary: #8492a6;
+  --secondary-foreground: #ffffff;
+  --muted: #8492a6;
+  --muted-foreground: #ffffff;
+  --accent: #5bc0de;
+  --accent-foreground: #ffffff;
+  --destructive: #ec3750;
+  --border: #252429;
+  --input: #252429;
+  --ring: #5bc0de;
+  --chart-1: #ec3750;
+  --chart-2: #ff8c37;
+  --chart-3: #f1c40f;
+  --chart-4: #33d6a6;
+  --chart-5: #5bc0de;
+  --sidebar: #252429;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ec3750;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #5bc0de;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #252429;
+  --sidebar-ring: #5bc0de;
 }
 
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease; /* smooth transition */
+  }
+}
+
+/* Font */
 @font-face {
   font-family: 'Phantom Sans';
   src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff')
@@ -119,81 +153,6 @@ body {
   font-style: normal;
   font-display: swap;
 }
-
-:root {
-  --radius: 0.625rem;
-  /* Light mode semantic colors */
-  --background: var(--color-background);
-  --text: var(--color-text);
-  --elevated: var(--color-elevated);
-  --sheet: var(--color-sheet);
-  --sunken: var(--color-sunken);
-  --border: var(--color-border);
-  --placeholder: var(--color-placeholder);
-  --secondary: var(--color-secondary);
-  --primary: var(--color-primary);
-  --accent: var(--color-accent);
-  --card: var(--color-elevated);
-  --card-foreground: var(--color-text);
-  --popover: var(--color-elevated);
-  --popover-foreground: var(--color-text);
-  --primary-foreground: var(--color-white);
-  --secondary-foreground: var(--color-white);
-  --muted: var(--color-muted);
-  --muted-foreground: var(--color-text);
-  --destructive: var(--color-red);
-  --input: var(--color-border);
-  --ring: var(--color-accent);
-  --chart-1: var(--color-blue);
-  --chart-2: var(--color-green);
-  --chart-3: var(--color-purple);
-  --chart-4: var(--color-orange);
-  --chart-5: var(--color-red);
-  --sidebar: var(--color-elevated);
-  --sidebar-foreground: var(--color-text);
-  --sidebar-primary: var(--color-primary);
-  --sidebar-primary-foreground: var(--color-white);
-  --sidebar-accent: var(--color-accent);
-  --sidebar-accent-foreground: var(--color-white);
-  --sidebar-border: var(--color-border);
-  --sidebar-ring: var(--color-accent);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode semantic colors */
-    --background: var(--color-dark);
-    --text: var(--color-white);
-    --elevated: var(--color-darkless);
-    --sheet: var(--color-darkless);
-    --sunken: var(--color-darker);
-    --border: var(--color-darkless);
-    --placeholder: var(--color-slate);
-    --secondary: var(--color-muted);
-    --primary: var(--color-primary);
-    --accent: var(--color-cyan);
-  }
-}
-
-.dark {
-  /* Dark mode semantic colors */
-  --background: var(--color-dark);
-  --text: var(--color-white);
-  --elevated: var(--color-darkless);
-  --sheet: var(--color-darkless);
-  --sunken: var(--color-darker);
-  --border: var(--color-darkless);
-  --placeholder: var(--color-slate);
-  --secondary: var(--color-muted);
-  --primary: var(--color-primary);
-  --accent: var(--color-cyan);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-[var(--text)];
-  }
+body {
+  font-family: 'Phantom Sans', Arial, Helvetica, sans-serif;
 }
