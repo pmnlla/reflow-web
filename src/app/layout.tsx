@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar";
 import { ThemeProvider } from "next-themes";
 import { TestingRibbon } from "@/components/devmode";
 import Script from "next/script";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Reflow",
@@ -23,6 +24,7 @@ export default function RootLayout({
           <main className="px-4 md:px-6 lg:px-8 py-4 w-full">
             <TestingRibbon />
             {children}
+            <Footer />
           </main>
         </ThemeProvider>
         <Script 
