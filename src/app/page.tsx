@@ -72,15 +72,15 @@ export default function Home() {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-orange-500 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
                 <Card
                   key={card.title}
-                  className="bg-zinc-900 relative overflow-hidden h-full pt-0 rounded-xl gap-0"
+                  className="bg-white dark:bg-zinc-900 relative overflow-hidden h-full pt-0 rounded-xl gap-0"
                 >
                   <div className="relative h-48 w-full">
                     <Image src={card.image || "/placeholder.svg"} alt={card.title} fill className="object-cover" />
                   </div>
                   <CardHeader className="pt-6">
-                    <CardTitle className="text-2xl font-bold text-center">{card.title}</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-center text-black dark:text-white">{card.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="text-center text-zinc-300">{card.description}</CardContent>
+                  <CardContent className="text-center text-zinc-900 dark:text-zinc-300">{card.description}</CardContent>
                 </Card>
               </div>
             ))}
