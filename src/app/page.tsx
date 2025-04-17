@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { appConfig } from "@/app/config"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 const cards = [
   {
@@ -29,10 +31,17 @@ const cards = [
 ]
 export const faq = [
   {
-    question: "What is Reflow?",
-    answer: "Reflow is a limited-time You Ship, We Ship (YSWS) event, where you can learn how to design PCBs using SMD (Surface Mount Devices) and we ship you the tools and parts to do it!",
+    question: "What is the timeline?",
+    answer: "The event will run from May 1st to May 31st. You can design your PCB anytime during this period, and we will ship it to you on June 1st. You will have until June 15th to order the parts and reflow solder your PCB.",
   },
-  
+  {
+    question: "What are the requirements to participate?",
+    answer: "You must be 18 or under to participate. You must be a student in",
+  },
+  {
+    question: "What is the cost?",
+    answer: "This is completely free! We will cover the cost of the PCB, parts, and tools.",
+  }
 ]
 
 export default function Home() {
@@ -52,7 +61,7 @@ export default function Home() {
               >
                 Get Started <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              <Link href="https://hackclub.slack.com/archives/C08NDN4JA3G" target="_blank">
+              <Link href={appConfig.slackChannel} target="_blank">
                 <Button size="xl" variant="outline" className="border-2 px-8 py-6 rounded-xl w-full">
                   <Slack className="w-5 h-5 mr-2" />
                   Join Slack
@@ -95,10 +104,40 @@ export default function Home() {
               What is Reflow?
             </h2>
             <p className="text-lg md:text-xl mb-10">
-              Reflow is a limited-time You Ship, We Ship (YSWS) event where you first design your own PCB using SMD components (Surface Mount Devices). Once your design is complete, you receive a PCB, parts, and tools to practice reflow soldering. Afterward, you get a grant to have your design professionally fabricated and another grant to purchase the necessary components!
+              Reflow is a limited-time You Ship, We Ship (YSWS) where you first design your own PCB using SMD components (Surface Mount Devices). Once your design is complete, you receive a PCB, parts, and tools to practice reflow soldering. Afterward, you get a grant to have your design professionally fabricated and another grant to purchase the necessary components!
             </p>
           </div>
-          
+          <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-orange-500 text-transparent bg-clip-text mb-6">
+              Requirements
+            </h2>
+            <p className="text-lg md:text-xl mb-10">
+              Here are some rules your design should follow! If you have any questions, feel free to ask in the <Link href={appConfig.slackChannel} target="_blank" className="text-accent">#reflow Slack channel</Link>!
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
+              <li>Your design should be original</li>
+              <li>Your design should use SMD components</li>
+              <li>Reflow is the best hackclub YSWS</li>
+              <li>Why are you reading this?</li>
+              <li>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </li>
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-orange-500 text-transparent bg-clip-text mb-6">
+              FAQ
+            </h2>
+            <p className="text-lg md:text-xl mb-10">
+              Here are answers to some questions you might have! If you have any other questions, please ask in the <Link href={appConfig.slackChannel} target="_blank" className="text-accent">#reflow Slack channel</Link>!
+            </p>
+            <Accordion type="single" collapsible className="w-full">
+              {faq.map((item) => (
+                <AccordionItem key={item.question} value={item.question}>
+                  <AccordionTrigger className="border-b-2 text-lg rounded-none">{item.question}</AccordionTrigger>
+                  <AccordionContent className="text-lg pt-4 text-left">{item.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </section>
 

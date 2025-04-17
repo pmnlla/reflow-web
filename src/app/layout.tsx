@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "next-themes";
 import { TestingRibbon } from "@/components/devmode";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Reflow",
@@ -24,6 +25,10 @@ export default function RootLayout({
             {children}
           </main>
         </ThemeProvider>
+        <Script 
+          defer 
+          src="https://assets.onedollarstats.com/stonks.js"
+        />
       </body>
     </html>
   );
