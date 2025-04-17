@@ -22,13 +22,15 @@ export default function Navbar() {
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
-            <Image
-              className="h-16 w-auto translate-y-[-12px] hover:translate-y-0 transition-all duration-300"
-              src="https://assets.hackclub.com/flag-orpheus-top.svg"
-              alt="Hack Club Logo"
-              width={64}
-              height={64}
-            />
+            <Link href="/">
+              <Image
+                className="h-16 w-auto translate-y-[-12px] hover:translate-y-0 transition-all duration-300"
+                src="https://assets.hackclub.com/flag-orpheus-top.svg"
+                alt="Hack Club Logo"
+                width={64}
+                height={64}
+              />
+            </Link>
           </div>
 
           {/* Desktop menu */}
@@ -79,8 +81,8 @@ export default function Navbar() {
                 </DrawerHeader>
                 <div className="flex flex-col space-y-4 p-4">
                   {items.map((item) => (
-                    <Link 
-                      key={item.href} 
+                    <Link
+                      key={item.href}
                       href={item.href}
                       className="text-lg font-medium hover:text-indigo-600"
                     >
