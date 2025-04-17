@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "next-themes";
 import { TestingRibbon } from "@/components/devmode";
 import Script from "next/script";
 import Footer from "@/components/footer";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Reflow",

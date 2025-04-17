@@ -1,5 +1,8 @@
 import Link from "next/link";
-export default function Footer() {
+import { getVersionString } from "@/util/app-version";
+
+export default async function Footer() {
+  const version = await getVersionString();
   return (
     <footer className="py-4">
       <div className="container mx-auto px-4">
@@ -16,6 +19,11 @@ export default function Footer() {
         <p className="text-center text-gray-600">
           Follow us on Github for a cookie!
         </p>
+        <Link href={version.url} target="_blank">
+          <p className="text-center text-gray-600">
+            {version.version}
+          </p>
+        </Link>
       </div>
     </footer>
   );
