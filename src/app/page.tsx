@@ -29,7 +29,7 @@ const cards = [
     description: <>Get a grant to order the PCB you designed, and parts to reflow solder on it!</>,
   },
 ]
-export const faq = [
+const faq = [
   {
     question: "What is the timeline?",
     answer: "The event will run from May 1st to May 31st. You can design your PCB anytime during this period, and we will ship it to you on June 1st. You will have until June 15th to order the parts and reflow solder your PCB.",
