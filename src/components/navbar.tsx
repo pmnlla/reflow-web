@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
             <Image
-              className="h-16 w-auto"
+              className="h-16 w-auto translate-y-[-12px] hover:translate-y-0 transition-all duration-300"
               src="https://assets.hackclub.com/flag-orpheus-top.svg"
               alt="Hack Club Logo"
               width={64}
