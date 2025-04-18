@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 
 import "./globals.css";
 import "./bg.css";
+import { appConfig } from "@/app/config";
 
 export const metadata: Metadata = {
   title: "Reflow",
@@ -24,7 +25,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" forcedTheme="dark">
           <Navbar />
           <main className="px-4 md:px-6 lg:px-8 py-4 w-full">
-            <TestingRibbon />
+            {appConfig.dev && <TestingRibbon />}
             {children}
             <Footer />
           </main>
