@@ -3,7 +3,12 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ["assets.hackclub.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.hackclub.com",
+      },
+    ],
   },
 };
 
