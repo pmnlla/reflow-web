@@ -6,6 +6,7 @@ import Script from "next/script";
 import Footer from "@/components/footer";
 
 import "./globals.css";
+import "./bg.css";
 
 export const metadata: Metadata = {
   title: "Reflow",
