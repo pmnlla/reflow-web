@@ -118,7 +118,7 @@ export default function Home() {
               Requirements
             </h2>
             <p className="text-lg md:text-xl mb-10">
-              Here are some rules your design should follow! If you have any questions, feel free to ask in the <Link href={appConfig.slackChannel} target="_blank" className="text-accent">#reflow Slack channel</Link>!
+              Here are some rules your design should follow! If you have any questions, feel free to ask in <Link href={appConfig.slackChannel} target="_blank" className="text-accent">#reflow</Link>!
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
               {rules.map(rule => {
@@ -133,7 +133,7 @@ export default function Home() {
               FAQ
             </h2>
             <p className="text-lg md:text-xl mb-10">
-              Here are answers to some questions you might have! If you have any other questions, please ask in the <Link href={appConfig.slackChannel} target="_blank" className="text-accent">#reflow Slack channel</Link>!
+              Here are answers to some questions you might have! If you have any other questions, please ask in <Link href={appConfig.slackChannel} target="_blank" className="text-accent">#reflow</Link>!
             </p>
             <Accordion type="single" collapsible className="w-full">
               {faq.map((item) => (
