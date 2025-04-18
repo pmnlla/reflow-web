@@ -4,7 +4,6 @@ import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from 
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import ThemeToggle from "@/components/theme-toggle";
 const items = [
   {
     label: "Home",
@@ -47,16 +46,10 @@ export default function Navbar() {
             <Link href="https://github.com/pmnlla/reflow" className="flex items-center" target="_blank">
               <FaGithub className="text-2xl" />
             </Link>
-            <div className="flex items-center">
-              <ThemeToggle />
-            </div>
           </div>
 
           {/* Mobile menu */}
           <div className="flex items-center space-x-4 sm:hidden">
-            <div className="flex items-center">
-              <ThemeToggle />
-            </div>
             <Drawer>
               <DrawerTrigger asChild>
                 <button

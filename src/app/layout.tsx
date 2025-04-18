@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`antialiased min-h-screen flex flex-col transition-colors duration-300`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
+        <ThemeProvider attribute="class" forcedTheme="dark">
           <Navbar />
           <main className="px-4 md:px-6 lg:px-8 py-4 w-full">
             <TestingRibbon />
