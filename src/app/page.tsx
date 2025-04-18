@@ -43,7 +43,13 @@ const faq = [
     answer: "This is completely free! We will cover the cost of the PCB, parts, and tools.",
   }
 ]
-
+const rules = [
+  "Your design should be original",
+  "Your design should use SMD components",
+  "Reflow is the best hackclub YSWS",
+  "Why are you reading this?",
+  "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah ",
+]
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -115,11 +121,11 @@ export default function Home() {
               Here are some rules your design should follow! If you have any questions, feel free to ask in the <Link href={appConfig.slackChannel} target="_blank" className="text-accent">#reflow Slack channel</Link>!
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
-              <li>Your design should be original</li>
-              <li>Your design should use SMD components</li>
-              <li>Reflow is the best hackclub YSWS</li>
-              <li>Why are you reading this?</li>
-              <li>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </li>
+              {rules.map(rule => {
+                return (
+                  <li key={rule}>{rule}</li>
+                )
+              })}
             </div>
           </div>
           <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
