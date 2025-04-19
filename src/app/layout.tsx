@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/navbar";
 import { ThemeProvider } from "next-themes";
 import { TestingRibbon } from "@/components/devmode";
 import Script from "next/script";
