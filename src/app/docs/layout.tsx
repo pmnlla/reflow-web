@@ -1,6 +1,7 @@
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/sidebar"
 import Navbar from "@/components/navbar"
+import BGGradients from "@/components/bg-gradients"
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           {children}
         </div>
       </div>
+      <BGGradients />
     </SidebarProvider>
   )
 }
