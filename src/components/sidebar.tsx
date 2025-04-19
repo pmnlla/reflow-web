@@ -48,12 +48,12 @@ export function AppSidebar() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <SidebarMenuItem>
-                    <SidebarMenuButton asChild className="py-6 group">
-                      <motion.span
-                        whileHover={{ x: 5 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                      >
-                        <Link href={item.url} className="flex flex-row items-center gap-2">
+                    <Link href={item.url} className="flex flex-row items-center gap-2">
+                      <SidebarMenuButton asChild className="py-6 group">
+                        <motion.span
+                          whileHover={{ x: 5 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
                           <motion.div
                             whileHover={{ scale: 1.2, rotate: 5 }}
                             transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -68,9 +68,9 @@ export function AppSidebar() {
                               animate={{ width: activeItem === item.url ? "100%" : "0%" }}
                             />
                           </span>
-                        </Link>
-                      </motion.span>
-                    </SidebarMenuButton>
+                        </motion.span>
+                      </SidebarMenuButton>
+                    </Link>
                   </SidebarMenuItem>
                 </motion.div>
               ))}
