@@ -84,7 +84,7 @@ export default function Home() {
               <Link href="/docs/getting-started">
                 <Button
                   size="xl"
-                  className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-8 py-6 rounded-xl"
+                  className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-8 py-6 rounded-xl w-full"
                 >
                   Get Started <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
