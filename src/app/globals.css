@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -102,7 +103,7 @@
   --chart-3: #f1c40f;
   --chart-4: #33d6a6;
   --chart-5: #5bc0de;
-  --sidebar: #252429;
+  --sidebar: var(--background);
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #ec3750;
   --sidebar-primary-foreground: #ffffff;

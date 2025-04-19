@@ -1,6 +1,20 @@
+import nextMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
+import remarkGfm from "remark-gfm";
+import underlinePlugin from "./underline";
+
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+
 const nextConfig: NextConfig = {
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  experimental: {
+    
+  },
+  turbopack: {
+    
+  },
   /* config options here */
   images: {
     remotePatterns: [
@@ -11,5 +25,11 @@ const nextConfig: NextConfig = {
     ],
   },
 };
-
-export default nextConfig;
+const withMDX = nextMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm, underlinePlugin],
+    rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+  }
+})
+export default withMDX(nextConfig);
