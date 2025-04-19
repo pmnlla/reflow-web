@@ -61,12 +61,14 @@ export default function Home() {
             </h1>
             <p className="text-xl md:text-2xl mb-10 max-w-2xl">Design your own PCB and learn reflow soldering!</p>
             <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-              <Button
-                size="xl"
-                className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-8 py-6 rounded-xl"
-              >
-                Get Started <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              <Link href="/docs/getting-started">
+                <Button
+                  size="xl"
+                  className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-8 py-6 rounded-xl"
+                >
+                  Get Started <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
               <Link href={appConfig.slackChannel} target="_blank">
                 <Button size="xl" variant="outline" className="border-2 px-8 py-6 rounded-xl w-full">
                   <Slack className="w-5 h-5 mr-2" />

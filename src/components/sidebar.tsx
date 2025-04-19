@@ -10,6 +10,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { docsSidebar } from "@/app/config"
+import Link from "next/link"
 
 export function AppSidebar() {
   return (
@@ -18,7 +19,9 @@ export function AppSidebar() {
       <SidebarGroup>
         <SidebarGroupLabel className="w-full flex justify-center py-6">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-orange-500 text-transparent bg-clip-text">
-            Reflow
+            <Link href="/">
+              Reflow
+            </Link>
           </h1>
         </SidebarGroupLabel>
         <SidebarGroupContent>
