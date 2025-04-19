@@ -22,7 +22,7 @@ const cards = [
     ),
   },
   {
-    image: "/assets/hotplate.jpg",
+    image: "/assets/hotplate.png",
     title: "Get a Hotplate",
     description: <>Get a hotplate, solder paste, and a testing PCB to practice on</>,
   },
