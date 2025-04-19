@@ -47,7 +47,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <td className="border border-gray-700 px-4 py-2 text-gray-300" {...props}>{children}</td>
     ),
     a: ({ children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-      <Link {...props} className="text-primary hover:text-primary/80">{children}</Link>
+      <Link {...props} href={props.href || '#'} className="text-primary hover:text-primary/80">{children}</Link>
     ),
   }
 }
