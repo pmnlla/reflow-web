@@ -1,21 +1,22 @@
-name: Deploy CI
+name: Deploy to vercel on commit
 on:
   push:
-    branches: [master]
-  pull_request:
-    types: [opened, synchronize, reopened]
+    branches:
+      - master
   workflow_dispatch:
 jobs:
-  deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Deploy to Vercel Action
-        uses: BetaHuhn/deploy-to-vercel-action@v1
+      - uses: actions/checkout@v2
+      - uses: amondnet/vercel-action@v20
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-args: '--prod'
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
+    permissions:
+      contents: write
+      deployments: write
+      pull-requests: write
