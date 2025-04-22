@@ -10,7 +10,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   experimental: {
-    
+    reactCompiler: true,
   },
   turbopack: {
     

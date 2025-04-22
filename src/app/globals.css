@@ -121,6 +121,32 @@
     @apply bg-background text-foreground;
     transition: background-color 0.3s ease, color 0.3s ease; /* smooth transition */
   }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/80;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) transparent;
+  }
 }
 
 /* Font */

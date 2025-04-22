@@ -15,7 +15,7 @@ export default function BGGradients() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="fixed -top-40 -right-40 w-96 h-96 bg-pink-500 opacity-20 rounded-full blur-3xl pointer-events-none"
+        className="z-[-1] fixed -top-40 -right-40 w-96 h-96 bg-pink-500 opacity-20 rounded-full blur-3xl pointer-events-none"
       />
       <motion.div
         animate={{
@@ -28,7 +28,7 @@ export default function BGGradients() {
           ease: "easeInOut",
           delay: 4
         }}
-        className="fixed -bottom-40 -left-40 w-96 h-96 bg-orange-500 opacity-20 rounded-full blur-3xl pointer-events-none"
+        className="z-[-1] fixed -bottom-40 -left-40 w-96 h-96 bg-orange-500 opacity-20 rounded-full blur-3xl pointer-events-none"
       />
     </>)
 }
