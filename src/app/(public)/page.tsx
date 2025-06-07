@@ -48,10 +48,10 @@ const faq = [
 ]
 const rules = [
   "Your design should be original",
-  "Your design should use SMD components",
-  "Reflow is the best hackclub YSWS",
-  "Why are you reading this?",
-  "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah ",
+  "At least 80% of the components in your design should require SMD soldering",
+  "You must NOT rely on external assembly serivces",
+  "Your deisng should pass automated review: see docs",
+  "**You must document your progress and post scraps in #reflow**",
 ]
 export default function Home() {
   return (
