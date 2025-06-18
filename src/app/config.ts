@@ -15,20 +15,5 @@ export const docsSidebar = [
     title: "Tutorials",
     url: "/docs/tutorials",
     icon: BookOpenTextIcon
-  },
-  {
-    title: "Test1",
-    url: "/docs/test1",
-    icon: BookOpenTextIcon
-  },
-  {
-    title: "Test2",
-    url: "/docs/test2",
-    icon: CloudLightningIcon
-  },
-  {
-    title: "Test3",
-    url: "/docs/test3",
-    icon: SunIcon
   }
 ]
