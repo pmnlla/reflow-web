@@ -1,4 +1,4 @@
-import { BookIcon, BookOpenTextIcon, CloudLightningIcon, SunIcon } from "lucide-react"
+import { BookIcon, BookOpenTextIcon} from "lucide-react"
 export const appConfig = {
   dev: true,
   slackChannel: "https://hackclub.slack.com/archives/C08NDN4JA3G",
