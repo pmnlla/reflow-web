@@ -24,6 +24,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
       <h3 {...props}>{children}</h3>
     ),
+    p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
+      <p className="mb-2 leading-loose" {...props}>{children}</p>
+    ),
+    ul: ({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
+      <ul className="my-2 ml-6 list-disc [&>li]:mt-2" {...props}>{children}</ul>
+    ),
+    ol: ({ children, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
+      <ol className="my-2 ml-6 list-decimal [&>li]:mt-2" {...props}>{children}</ol>
+    ),
+    li: ({ children, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
+      <li className="text-gray-300 leading-loose" {...props}>{children}</li>
+    ),
     table: ({ children, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
       <div className="my-6 w-full overflow-y-auto">
         <table className="w-full border-collapse border border-primary-700 rounded-md" {...props}>
