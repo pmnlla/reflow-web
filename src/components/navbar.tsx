@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { ReadProgress } from "@/components/read-progress";
 
 const items = [
   {
@@ -18,7 +19,7 @@ const items = [
   },
 ];
 
-export default function Navbar({ docs }: { docs?: boolean }) {
+export default function Navbar({ docs, readProgress }: { docs?: boolean, readProgress?: boolean }) {
   return (
     <motion.nav 
       initial={{ y: -20, opacity: 0 }}
@@ -130,6 +131,7 @@ export default function Navbar({ docs }: { docs?: boolean }) {
           </div>
         </div>
       </div>
+      {readProgress && <ReadProgress />}
     </motion.nav>
   );
 }

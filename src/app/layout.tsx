@@ -20,6 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      {/* <script
+        crossOrigin="anonymous"
+        src="//unpkg.com/react-scan/dist/auto.global.js"
+      /> */}
       <body className={`antialiased min-h-screen flex flex-col transition-colors duration-300`}>
         <ThemeProvider attribute="class" forcedTheme="dark">
           <main>

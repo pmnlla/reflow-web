@@ -1,8 +1,8 @@
+import { HeadingWrapper } from '@/components/heading-wrapper'
 import { Button } from '@/components/ui/button'
 import type { MDXComponents } from 'mdx/types'
-import { cn } from '@/lib/utils'
 import Link from 'next/link'
-import { LinkIcon } from 'lucide-react'
+
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -10,20 +10,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Button: ({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
       <Button {...props}>{children}</Button>
     ),
-    h1: ({ children, id, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <div className="group flex items-center gap-2">
-        <h1 {...props} className={cn("text-4xl font-bold", props.className)} id={id}>{children}</h1>
-        <a href={`#${id}`} className="text-primary hover:text-primary/80 hidden group-hover:block">
-          <LinkIcon className="w-4 h-4" />
-        </a>
-      </div>
-    ),
-    h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h2 {...props}>{children}</h2>
-    ),
-    h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h3 {...props}>{children}</h3>
-    ),
+    h1: (props) => <HeadingWrapper level={1} {...props} />,
+    h2: (props) => <HeadingWrapper level={2} {...props} />,
+    h3: (props) => <HeadingWrapper level={3} {...props} />,
+    h4: (props) => <HeadingWrapper level={4} {...props} />,
+    h5: (props) => <HeadingWrapper level={5} {...props} />,
+    h6: (props) => <HeadingWrapper level={6} {...props} />,
     p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
       <p className="mb-2 leading-loose" {...props}>{children}</p>
     ),
